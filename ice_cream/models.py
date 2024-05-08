@@ -6,6 +6,9 @@ class IceCream(models.Model):
     description = models.TextField('Описание')
     on_main = models.BooleanField('На главную?', default=True)
 
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
+    quantity = models.PositiveIntegerField(verbose_name='Количество', default=0)
+
     class Meta:        
         ordering = ('name',)
         verbose_name = 'мороженое'
