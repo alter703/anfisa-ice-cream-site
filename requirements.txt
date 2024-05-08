@@ -1,5 +1,10 @@
+colorama==0.4.6
+distutils-pytest==0.2.1
 Django==2.2.19
-# pkg-resources==0.0.0
+iniconfig==2.0.0
+packaging==24.0
+pluggy==1.5.0
+pytest==8.2.0
 pytz==2021.1
+setuptools==69.5.1
 sqlparse==0.4.1
-
