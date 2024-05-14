@@ -17,8 +17,11 @@ from django.contrib import admin
 # импорт include позволит использовать адреса, включенные в приложения
 from django.urls import include, path 
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [    
     # Сначала проверяем все пути, которые есть в приложении ice_cream
     path('', include('ice_cream.urls', namespace='ice_cream')),
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
