@@ -26,6 +26,12 @@ class IceCream(models.Model):
         else:
             return 
 
+    def get_first_thumbnail(self):
+        if self.images:
+            return self.images.first().thumbnail.url
+        else:
+            return 
+
 
 class Image(models.Model):
     ice_cream = models.ForeignKey(IceCream, on_delete=models.CASCADE, related_name='images')

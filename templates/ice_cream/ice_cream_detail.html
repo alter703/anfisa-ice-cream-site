@@ -11,6 +11,20 @@
       <!--img-fluid: размер изображения подстроится под занимаемый блок -->
       <!-- img-thumbnail: вокруг изображения тонкая обводка -->
       <img class="img-fluid img-thumbnail" src="{% if ice_cream.get_first_image %}{{ice_cream.get_first_image}}{% else %}{% static 'img/tmb.png' %}{% endif %}" alt="">
+      <div class="container px-4 text-center">
+        <div class="row gx-5 row-cols-2">
+          {% for image in ice_cream.images.all %}
+          <div class="col p-2">
+            <img src="{{image.thumbnail.url}}" alt="" width="70%">
+           </div>
+          {% endfor %}
+
+          <!-- <div class="col">
+            <div class="p-3">Custom column padding</div>
+          </div> -->
+        </div>
+      </div>
+
     </div>
     <!-- Блок описания займет всю ширину родительского блока на мобильном, 
        7/12 на планшете и 3/4 на компьютере -->   
