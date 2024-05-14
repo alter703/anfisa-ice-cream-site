@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
 <h1>Отзывы</h1>
+
+<a class="btn btn-success" href="{% url 'feedback:publish_feedback' %}">Написать отзыв</a>
+
 <div class="row py-3">
     {% for feedback in feedbacks %}
       {% include 'feedback/includes/feedback_card.html' %}  
