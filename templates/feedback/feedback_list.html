@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Отзывы</h1>
+<div class="row py-3">
+    {% for feedback in feedbacks %}
+      {% include 'feedback/includes/feedback_card.html' %}  
+    {% endfor %}
+</div>
+{% endblock %}

@@ -50,6 +50,7 @@ LOGGING = {
 
 INSTALLED_APPS = [
     'ice_cream.apps.IceCreamConfig',
+    'feedback.apps.FeedbackConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

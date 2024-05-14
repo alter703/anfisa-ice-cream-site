@@ -7,10 +7,6 @@ def index(request):
     template = 'ice_cream/index.html'
     selected_ice_creams = IceCream.objects.filter(on_main=True) 
 
-    for i in IceCream.objects.all():
-        for j in i.images.all():
-            print(j.image.url + '--------------------------------------------------------')
-
     # только то мороженое, у кторого есть флаг on_main
     context = {
         'selected_ice_creams': selected_ice_creams,
