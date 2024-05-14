@@ -5,7 +5,8 @@ from .models import IceCream
 
 def index(request):
     template = 'ice_cream/index.html'
-    selected_ice_creams = [ice_cream for ice_cream in IceCream.objects.filter(on_main=True)] 
+    selected_ice_creams = IceCream.objects.filter(on_main=True) 
+
     # только то мороженое, у кторого есть флаг on_main
     context = {
         'selected_ice_creams': selected_ice_creams,
@@ -15,7 +16,7 @@ def index(request):
 
 def ice_cream_list(request):
     template = 'ice_cream/ice_cream_list.html'
-    ice_creams = [ice_cream for ice_cream in IceCream.objects.all()]
+    ice_creams = IceCream.objects.all()
     # все мороженое
     context = {
         'ice_creams': ice_creams,
